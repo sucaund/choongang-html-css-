@@ -1,0 +1,90 @@
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/* ==================================================== */
+
+
+/* ================================================================= */
+
+
+/* ======================================================================== */
+/* 대문사진 */
+.widthImg {
+    width: 80%; height: 200px;
+    border: 0px solid white;
+    margin: 0 auto;
+    background: url(../img/bg1.jpg);
+    background-size: 100% 100%;
+}
+/* ======================================================================== */
+/* 하단 사진메뉴창 */
+.at0 {
+    width: 1000px; height: 500px;
+    border: 0px solid black;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.at0 div {
+    width: 24%;
+    border: 1px solid black;
+}
+
+.at0 .hegithImg{
+    background: url(/img/img7.png)no-repeat;
+    background-size: 100% 100%;
+}
+/* 그림과 글씨가있는 부모태그 */
+.at0 div .img_text_Box {
+    position: relative;
+    top: 0; left: 0;
+
+    width: 100%; height: 240px;
+    overflow: hidden;
+}
+/* 부모태그를 오버하면 자식태그중 그림만 올라옴 */
+
+.at0 div .hegithImg:hover p img{
+    transform: scale(2rem);
+}
+/* 부모태그를 오버하면 자식태그중 글씨만 올라옴 */
+.at0 div .img_text_Box:hover .imgText{
+    top: 80%;
+}
+
+
+/* div 안에 있는 p태그 만들기 */
+.at0 div .img_text_Box p {
+    width: 100%; height: 100%;
+}
+/* div 안에 있는 p태그에 그림 넣기 */
+.at0 div .img_text_Box p img {
+    width: 100%; height: 100%;
+}
+.at0 div .img_text_Box:last-child {
+    margin-top: 18px;
+}
+/* 그림 설명글이 들어 있는 div */
+.at0 div .img_text_Box .imgText {
+    position: absolute;
+    top: 100%; left: 0;
+    width: 100%; height: 50px;
+    /* border: 1px solid red; */
+    color: #ccc;
+    background-color: #5867e0;
+    line-height: 50px;
+    transition: 0.5s;
+}
+
+/* ====================================================================== */
+
+/* ============================================================================== */
+/* 우측 메뉴바 클릭시 링크 */
+a{
+    color: black;
+}
