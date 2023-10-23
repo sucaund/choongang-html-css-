@@ -11,26 +11,161 @@
     <p class="title">
         횡성입니다.
     </p>
+    <script>
+        function section_func(js){
+            smallImg5.style.display="none";
+            sec0.style.display="none";
+            sec1.style.display="none";
+            sec2.style.display="none";
+            if(js==0){
+                sec0.style.display="flex";
+                smallImg5.style.display="block";
+            }    
+            else if(js==1){
+                sec1.style.display="block";
+                sec1Mp4.style.display="block";
+            }    
+            else if(js==2)
+            sec2.style.display="block";
+        }
+    </script>
     <div class="wrap">
         <nav>
-            <div>경제</div>
-            <div>문화</div>
-            <div>스포츠</div>    
+            <div onclick="section_func(0)">홈으로</div>
+            <div onclick="section_func(1)">경제</div>
+            <div onclick="section_func(2)">문화</div>
+            <div onclick="section_func(3)">스포츠</div>    
+            <div onclick="section_func(4)">모임</div>    
         </nav>
-        <section class="sec">
-            <div>
-                <p>숙박시설</p>
+        
+        <section id="sec1">
+            <div class="sec1Bg" id="sec1Mp4">
+                <video autoplay muted controls loop="3">
+                    <source src="/Hoengseong/video/vid.mp4">
+                </video>
+                <p class="sec1bg_skip"
+                onclick="sec1Mp4.style.display='none'">
+                    skip
+                </p>
+            </div>
+            <p>경제화면으로 돌아왔어요.</p>
+        </section>
+
+        <section id="sec2">
+            <div class="sec2Bg bg">
+
+            </div>
+        </section>
+
+        <!-- 초기화면에 보여지는 section(.sec) -->
+        <section class="sec" id="sec0">  
+            <div class="box1" onmouseover="bus.style.display='none'"
+                                onmouseout="bus.style.display='block'">
+                <p>갤러리</p>
                 <div class="sleepBox box">
-                    여러가지내용
+                    <div class="big">
+                        <ul class="img5">
+                            <li><div>글자-1</div></li>
+                            <li><div>글자-2</div></li>
+                            <li><div>글자-3</div></li>
+                            <li><div>글자-4</div></li>
+                            <li><div>글자-5</div></li>
+                            <li><div>글자-1</div></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div>
+            
+            <div class="box2">
                 <p>교통안내</p>
-                <div class="bus box">
-                    교통버스안내
+                <div class="bus box" id="bus">
+                    <div class="name2">
+                        <div>대중교통입니다.</div>
+                        <div>여러가지방법으로</div>
+                    </div>
+                    
+                    <div class="both">
+                        <div>다양한 방법으로</div>
+                        <div>떠나는 여행</div>
+                        <p class="one"></p>
+                    </div>
+                    <div class="box2Img5">
+                        <ul>
+                        <li>
+                            <img src="/Hoengseong/img/summercell.jpg" alt="">
+                        </li>
+                        <li>상품명:지도책</li>
+                        <li>가격:5000원</li>
+                        <li>사이즈:250x300</li>
+                        <li></li>
+                        </ul>
+                        
+                        <ul>
+                            <li>
+                            <img src="/Hoengseong/img/summercell.jpg" alt="">
+                        </li>
+                        <li>상품명:지도책</li>
+                        <li>가격:5000원</li>
+                        <li>사이즈:250x300</li>
+                        <li></li></ul>
+                        <ul>
+                            <li>
+                                <img src="/Hoengseong/img/summercell.jpg" alt="">
+                            </li>
+                            <li>상품명:지도책</li>
+                            <li>가격:5000원</li>
+                            <li>사이즈:250x300</li>
+                            <li></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <img src="/Hoengseong/img/summercell.jpg" alt="">
+                            </li>
+                            <li>상품명:지도책</li>
+                            <li>가격:5000원</li>
+                            <li>사이즈:250x300</li>
+                            <li></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <img src="/Hoengseong/img/summercell.jpg" alt="">
+                            </li>
+                            <li>상품명:지도책</li>
+                            <li>가격:5000원</li>
+                            <li>사이즈:250x300</li>
+                            <li></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+        
+        
+
+
+
+        <ul class="smallImg5" id="smallImg5">
+            <li onclick="func('cow.jfif');"><img src="/img/cow.jfif" alt=""></li>
+            <li onclick="func('spring.jfif')"><img src="/img/bg1.jpg" alt=""></li>
+            <li onclick="func('summer.jpg')"><img src="/img/airplane.jfif" alt=""></li>
+            <li onclick="func('fall.jpg')"><img src="/img/carl.jpg" alt=""></li>
+            <li onclick="func('ski.jpg')"><img src="/img/ping.png" alt=""></li>
+        </ul>
     </div>
+    
+    <div id="full">
+        <p id="fullClose" onclick="full.style.display='none'">X</p>
+        <div class="fullImg">
+            <img src="img/cow.jfif" alt="" name="fullPic">
+        </div>
+    </div>
+
+<script>
+    function func(js){
+        console.log (js);
+        full.style.display="block";
+        fullPic.src="img/" +js;
+    }
+</script>
 </body>
 </html>

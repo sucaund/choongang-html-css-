@@ -4,21 +4,27 @@
     list-style: none;
     text-decoration: none;
 }
+
+body{
+    overflow-x: hidden;
+}
 a{color: black;}
 
+/* 부모 wrap 높이 2000 이므로 sec높이도 2000이다. */
 .wrap{
-    width: 100%; height: 700px;
+    width: 100%; height: 2000px;
     border: 1px solid rgb(226, 14, 14);
+    margin-top: 30px;
     
 }
 
-/* 메뉴창 */
+/* 상단 메뉴창 */
 
 .wrap nav{
-    width: 100%; height: 50;
+    width: 100%; height: 50px;
     display: flex;
     justify-content: space-between;
-    border: 0px solid blue;
+    border: 1px solid white;
 }
 
 .wrap nav div{
@@ -30,42 +36,341 @@ a{color: black;}
 
 /* 본문내용 */
 .wrap .sec{
-    width: 100%;
+    width: 100%; height: 2000px;
     margin-top: 30px;
     border: 1px solid black;
     display: flex;
 }
 
+
+
+/* 경제메뉴를 클릭하면 보여지는 section (#sec1) */
+#sec1{
+    display: none;
+}
+#sec1 .sec1Bg{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: black;
+    /* display: none; */
+}
+
+#sec1 .sec1Bg video{
+    width: 100%;
+    min-width: 1500px;
+}
+
+/* 문회메뉴를 클릭하면 보여지는 section (#sec2) */
+
+#sec2{
+    display: none;
+}
+#sec2 .sec2Bg{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background:  green;
+    /* display: none; */
+}
+
+
+
+
+
+
+
+
+/* 포기화면에 보여지는 section(.sec) */
 /* 글자 담는 박스 */
 .sec> div{
     position: relative;
     top: 0; left: 0;
     width: 10%; 
-    border: 1px solid orange;
+    border: 0px solid orange;
 }
+/* 갤러리,교통안내 */
 .sec div p {
     width: 100%; height: 50px;
     text-align: center;
     line-height: 50px;
 }
+/* 갤러리 */
 .sec div .sleepBox{
     width: 1000%; 
     border: 1px solid blue;
     position: absolute;
     top: 50px; left: 0;
 }
-.sec div .bus{
-    width: 1000%; 
-    border: 5px solid green;
-    position: absolute;
-    top: 49px; left: -100%;
+
+.sec .box1{
+
 }
-.sec div:hover div{
+
+/* 갤러리 이미지 슬라이드 */
+.sec .box1 .sleepBox .big{
+    position: relative;
+    top: 0; left: 0;
+    width: 1000px; height: 500px;
+    border: 3px solid black;
+    overflow: hidden;
+}
+
+/* 갤러리 이미지 슬라이드 사진설정 */
+.sec .box1 .sleepBox .big .img5{
+    position: absolute;
+    top: 0; left: 0;
+
+    width: 6000px; 
+    height: 100%;
+    border: 1px solid green;
+    display: flex;
+    animation:  img5_ani 20s linear infinite;
+}
+@keyframes img5_ani
+{
+    0%{left: 0px;}
+    2%{left: -1000px;}
+    20%{left: -1000px;}
+    22%{left: -2000px;}
+    40%{left: -2000px;}
+    42%{left: -3000px;}
+    60%{left: -3000px;}
+    62%{left: -4000px;}
+    80%{left: -4000px;}
+    82%{left: -5000px;}
+    100%{left: -5000%;}
+}
+
+.sec .box1 .sleepBox .big .img5 li:nth-child(1){
+    background: url(/Hoengseong/img/cow.jfif);
+    background-size: 100% 100%;
+}
+.sec .box1 .sleepBox .big .img5 li:nth-child(2){
+    background: url(/Hoengseong/img/spring.jfif);
+    background-size: 100% 100%;
+}
+.sec .box1 .sleepBox .big .img5 li:nth-child(3){
+    background: url(/Hoengseong/img/summer.jpg);
+    background-size: 100% 100%;
+}
+.sec .box1 .sleepBox .big .img5 li:nth-child(4){
+    background: url(/Hoengseong/img/fall.jpg);
+    background-size: 100% 100%;
+}
+.sec .box1 .sleepBox .big .img5 li:nth-child(5){
+    background: url(/Hoengseong/img/ski.jpg);
+    background-size: 100% 100%;
+}
+.sec .box1 .sleepBox .big .img5 li:nth-child(6){
+    background: url(/Hoengseong/img/cow.jfif);
+    background-size: 100% 100%;
+}
+
+
+/* 갤러리 내부 글자-1~-5까지 */
+.sec .box1 .sleepBox .big .img5 li{
+    width: 1000px; 
+    height: 100%;
+    border: 1px solid red;
+    font-size: 3rem;
+}
+
+.sec .box1 .sleepBox .big .img5 li div{
+    width: 700%; text-align: right;
+    margin: 50px auto;
+    font-size:  2rem ;
+
+}
+
+/* 교통안내창 */
+.sec div .bus{
+    width: 1000%;
+    border: 10px solid green;
+    position: absolute;
+    top: 50px; left: -100%;
+}
+
+/* 교통안내창 상단 제목표 */
+
+.sec .box2 .bus .name2{
+    width: 80%; height: 50px;
+    border: 1px solid firebrick;
+    display: flex;
+    line-height: 50px;
+    text-indent: 50px;
+    background: black;
+    margin: 0 auto;
+    }
+.sec .box2 .bus .name2 div{
+    /* border: 1px solid violet; */
+    color: white;
+}
+
+    .sec .box2{
+    display: block;}
+    
+    .sec .box2 p{
+        border: 1px solid goldenrod;
+    }
+    /* 증간안내창 */
+    .sec .box2 .both {
+        position: relative;
+        top: 0; left: 0;
+        margin: 30px auto;
+        width: 80%; height: 70px;
+        border:  1px solid forestgreen;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* "다양한 방법으로" */
+    .sec .box2 .both div:first-child {
+        width: 49%; height: 100%;
+        background: palevioletred;
+    }
+    /* "떠나는 여행" */
+    .sec .box2 .both div:nth-child(2){
+        background:  plum;
+        width: 49%; height: 100%;
+        border: 3px solid red;
+    }
+
+
+    /* 가운데원 */
+    .sec .box2 .one{
+        position: absolute;
+        top: -25px; left: 30%;
+        width: 150px; height: 150px;
+        background: purple;
+        border-radius: 100%;
+        /* 원안에 배경그림 넣기 */
+        background: url(/Hoengseong/img/duduck.jpg);
+        background-size:  100% 100%;
+    }
+
+
+
+
+/* box1(갤러리) 을 오버라면 box2(교통이 안보임) */
+.sec .box1:hover div{
     display: block;
+}
+.sec .box2:hover div{
+    /* display: block; */
 }
 .sec .box{
     background: white;
-    display: none;
-    height: 500px;
+    /* display: none; */
+    height: 700px;
     padding: 30px;
+}
+/* 
+.sec .box1{ 겔러리
+    display: block;
+    
+
+}
+.sec .box2{
+    display: block;
+}
+ */
+
+/* 작은그림5개 */
+/* .smallImg5{ */
+
+    /* position: absolute;
+    top: 650px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 150px;
+    border: 5px solid black;
+    margin: 100px auto;
+    display: flex;
+    justify-content:space-between;
+    
+} */
+.smallImg5 li {
+    width: 100px; height: 100%;
+}
+.smallImg5 li img {
+    width: 100%;  height: 100%;
+}
+
+
+/* 전체화면을 검정--큰그림 나오는 아이디 */
+#full{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: black;
+    display: none;
+    color: white;
+}
+
+#fullClose{
+    position: absolute;
+    top: 100px; height: 100%;
+    width: 50px; height: 50px;
+    border: 1px solid white;
+}
+
+.fullImg{
+    position: absolute;
+    top: 100px; left: 100px;
+    width: 500px; height:  200px;
+    border: 1px solid #ccc;
+}
+.fullImg img{
+    width: 100%; height: 100%;
+}
+
+/* 중간 제품설명창 */
+.sec .box2 .box2Img5{
+    width: 80%; height: 300px;
+    border: 1px solid red;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sec .box2 .box2Img5 ul{
+    width: 18% ;height: 100%;
+    /* border: 1px solid black; */
+}
+.sec .box2 .box2Img5 ul li{
+    width: 100%; height: 40px;
+    /* border:  1px solid blue; */
+    /* text-align: center; */
+    line-height: 30px;
+    overflow: hidden;
+    
+}
+.sec .box2 .box2Img5 ul li img{
+    width: 90%; height: 90%;
+    margin-top: 10px;
+    
+}
+.sec .box2 .box2Img5 ul li img:hover{
+    transform: scale(1.2);
+}
+    .sec .box2 .box2Img5 ul li:first-child{
+        height: 180px;
+        text-align: center;
+    }
+
+
+section{
+    display: none;
+}
+#sec0{
+    display: none;
+}
+#sec1{
+    display: block;
+}
+
+#sec1 .sec1Bg .sec1bg_skip{
+    position: absolute;
+    bottom: 50px; left: 50%;
+    color: white;
 }
